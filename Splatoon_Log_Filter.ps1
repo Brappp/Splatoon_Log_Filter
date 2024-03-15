@@ -1,34 +1,24 @@
-# Import the required assembly for the OpenFileDialog
 Add-Type -AssemblyName System.Windows.Forms
-# Enable visual styles for the application
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
-# Set the initial directory for the OpenFileDialog
 $initialDirectory = "C:\Users\$env:USERNAME\AppData\Roaming\XIVLauncher\pluginConfigs\Splatoon\Logs"
 
-# Create a new OpenFileDialog
 $dialog = New-Object System.Windows.Forms.OpenFileDialog
 $dialog.InitialDirectory = $initialDirectory
 $dialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
 $dialog.Title = "Select a Log File"
 
-# Show the OpenFileDialog and capture the result
 $result = $dialog.ShowDialog()
 
-# Check if the result is OK (meaning a file was selected)
 if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
-    # If a file was selected, store its path
     $originalLogFilePath = $dialog.FileName
 } else {
-    # If no file was selected, exit the script
     Write-Host "No file selected. Exiting script."
     exit
 }
 
-# Define the character name to be used in the script
 $characterName = "YourCharacterName" # UPDATE WITH YOUR CHARACTER NAME
 
-# Define the array of abilities to exclude, based on your provided list
 $abilitiesToExclude = @(
     "Fast Blade", "Fight or Flight", "Riot Blade", "Total Eclipse", "Shield Bash", "Iron Will", "Release Iron Will",
     "Shield Lob", "Rage of Halone", "Spirits Within", "Sheltron", "Sentinel", "Prominence", "Cover",
@@ -160,25 +150,17 @@ $abilitiesToExclude = @(
 
 $lines = Get-Content $originalLogFilePath
 
-# Initialize an array to hold the extracted lines
 $extractedLines = @()
 
-# Iterate over each line in the log file
 foreach ($line in $lines) {
-    # Check if the line matches certain patterns and does not match the character name
     if ($line -match "readies|starts casting|uses" -and $line -notmatch $characterName) {
-        # Initialize a flag to indicate if the line contains an ability to be excluded
         $containsAbility = $false
-        # Iterate over the array of abilities to exclude
         foreach ($ability in $abilitiesToExclude) {
-            # Check if the line contains any of the abilities
             if ($line -match $ability) {
-                # Set the flag to true and break out of the loop
                 $containsAbility = $true
                 break
             }
         }
-        # If the line does not contain an ability to be excluded, add it to the extracted lines
         if (-not $containsAbility) {
             $extractedLines += $line
         }
