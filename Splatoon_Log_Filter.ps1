@@ -17,7 +17,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     exit
 }
 
-$characterName = "YourCharacterName"
+$characterName = "YourCharacterName" # UPDATE WITH YOUR CHARACTER NAME
 
 $jobsToExclude = @("Paladin", "Warrior", "Dark Knight", "Gunbreaker", "White Mage", "Scholar", "Astrologian", "Sage", "Monk", "Dragoon", "Ninja", "Samurai", "Reaper", "Bard", "Machinist", "Dancer", "Black Mage", "Summoner", "Red Mage", "Blue Mage")
 
