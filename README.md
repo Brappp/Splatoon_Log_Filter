@@ -4,7 +4,8 @@ This PowerShell script filters out specific lines from a Splatoon log file you s
 
 How It Works:
 
-Select Your Log File: When you run the script, a file dialog will pop up, allowing you to choose the log file you want to filter. This will open the default path           ```"C:\Users\$env:USERNAME\AppData\Roaming\XIVLauncher\pluginConfigs\Splatoon\Logs"```
+Select Your Log File: When you run the script, a file dialog will pop up, allowing you to choose the log file you want to filter.<br>
+This will open the default path ```"C:\Users\$env:USERNAME\AppData\Roaming\XIVLauncher\pluginConfigs\Splatoon\Logs"```
 
 Filtered File Creation: The script generates a new file in the same location as the original log file. This new file will have the same name as the original but with _filtered appended to it. For example, if your original file is named gameLog.txt, the filtered file will be gameLog_filtered.txt.
 
