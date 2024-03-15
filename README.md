@@ -2,7 +2,6 @@
  
 This PowerShell script filters out specific lines from a Splatoon log file you select. It's designed to extract lines containing certain keywords ```("readies", "starts casting", "uses")``` or any mentions of a list of job titles and a particular character name you specify. After filtering, it saves the results in a new file, using the original file's name with _filtered added before the file extension.
 
-**How It Works:**
 
 **Select Your Log File:**<br> When you run the script, a file dialog will pop up, allowing you to choose the log file you want to filter. This will open the default path:<br> ```"C:\Users\$env:USERNAME\AppData\Roaming\XIVLauncher\pluginConfigs\Splatoon\Logs"```
 
