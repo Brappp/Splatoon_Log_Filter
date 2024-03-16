@@ -1,23 +1,9 @@
 $jobs = @(
-    "Paladin",
-    "Warrior",
-    "DarkKnight",
-    "Gunbreaker",
-    "WhiteMage",
-    "Scholar",
-    "Astrologian",
-    "Sage",
-    "Monk",
-    "Dragoon",
-    "Ninja",
-    "Samurai",
-    "Reaper",
-    "Bard",
-    "Machinist",
-    "Dancer",
-    "BlackMage",
-    "Summoner",
-    "RedMage",
+    "Paladin", "Warrior", "DarkKnight", "Gunbreaker",
+    "WhiteMage", "Scholar", "Astrologian", "Sage",
+    "Monk", "Dragoon", "Ninja", "Samurai", "Reaper",
+    "Bard", "Machinist", "Dancer",
+    "BlackMage", "Summoner", "RedMage",
     "BlueMage"
 )
 
