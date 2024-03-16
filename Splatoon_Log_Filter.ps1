@@ -7,6 +7,7 @@ $dialog = New-Object System.Windows.Forms.OpenFileDialog
 $dialog.InitialDirectory = $initialDirectory
 $dialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
 $dialog.Title = "Select a Log File"
+$dialog.TopMost = $true
 
 $result = $dialog.ShowDialog()
 
